@@ -5,7 +5,6 @@ public:
         for(int i=0, j=ss.size()-1;i<j;i++, j--) if(ss[i]!=ss[j]) return false;
         return true;
     }
-    
     void p(string& s, vector<string>& v, int a){
         for(int i=a;i<s.size();i++){
             string t(s.substr(a, i-a+1));
