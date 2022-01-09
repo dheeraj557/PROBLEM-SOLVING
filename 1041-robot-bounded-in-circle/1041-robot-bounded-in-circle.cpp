@@ -5,8 +5,6 @@ public:
         EAST = 1,
         SOUTH = 2,
         WEST = 3;
-
-
     bool isRobotBounded(string instructions) {
         int x = 0, y = 0; // init position;
         int dir = NORTH;
