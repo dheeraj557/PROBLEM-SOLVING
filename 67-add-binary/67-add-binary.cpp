@@ -13,7 +13,6 @@ public:
         }
         if(carry)
             result += to_string(carry);
-        
         reverse(result.begin(), result.end());
         return result;
     }
