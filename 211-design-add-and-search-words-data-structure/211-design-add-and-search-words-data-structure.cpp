@@ -64,7 +64,6 @@ public:
         curr->isTerminal= true;
         count++;
     }
-    
     bool search(string word) {
         return helper(word, root);
     }
