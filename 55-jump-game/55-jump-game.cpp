@@ -8,7 +8,6 @@ public:
             if(m<i)
                 return false;
              m=max(nums[i]+i,m);
-            
         }
         return true;
     }
