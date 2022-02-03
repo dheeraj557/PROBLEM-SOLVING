@@ -8,7 +8,7 @@ public:
         int count = 0;
         for(int i : nums1)
             for(int j : nums2)
-                        count += mp[-(i + j)];
+                    count += mp[-(i + j)];
         return count;
     }
 };
