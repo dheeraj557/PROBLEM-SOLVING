@@ -1,8 +1,8 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        if(!nums.size()) return {-1,-1};
-        
+        if(!nums.size()) 
+            return {-1,-1};
         int low = 0, high = nums.size()-1;        
         int firstPos = -1, lastPos = -1;
         while(low < high){
@@ -18,9 +18,10 @@ public:
         high = nums.size()-1;
         while(low < high){
             int mid = (low + (high-low)/2) + 1;
-            
-            if(nums[mid] > target) high = mid-1;
-            else low = mid;
+            if(nums[mid] > target) 
+                high = mid-1;
+            else 
+                low = mid;
         }
         lastPos = high;
         return {firstPos, lastPos};
