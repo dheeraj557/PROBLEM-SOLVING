@@ -5,17 +5,16 @@ public:
         
         int low = 0, high = nums.size()-1;        
         int firstPos = -1, lastPos = -1;
-        
         while(low < high){
             int mid = low + (high-low)/2;
-            
-            if(nums[mid] < target) low = mid+1;
-            else high = mid;
+            if(nums[mid] < target) 
+                low = mid+1;
+            else 
+                high = mid;
         }        
-        if(nums[low] != target) return {-1,-1};
+        if(nums[low] != target) 
+            return {-1,-1};
         firstPos = low;
-        
-        // only change high, don't change low
         high = nums.size()-1;
         while(low < high){
             int mid = (low + (high-low)/2) + 1;
