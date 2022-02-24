@@ -4,18 +4,29 @@ public:
         int low = 0, mid, high = nums.size() - 1;
         while (low <= high) {
             mid = low + (high - low) / 2;
-            if (nums[mid] == target) {
+            if (nums[mid] == target) 
+            {
                 return mid;
-            } else if (nums[mid] >= nums[low]) {
-                if (target < nums[mid] && target >= nums[low]) {
+            } 
+            else if (nums[mid] >= nums[low]) 
+            {
+                if (target < nums[mid] && target >= nums[low]) 
+                {
                     high = mid - 1;
-                } else {
+                } 
+                else 
+                {
                     low = mid + 1;
                 }
-            } else {
-                if (target > nums[mid] && target <= nums[high]) {
+            } 
+            else 
+            {
+                if (target > nums[mid] && target <= nums[high]) 
+                {
                     low = mid + 1;
-                } else {
+                }
+                else 
+                {
                     high = mid - 1;
                 }
             }
