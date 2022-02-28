@@ -17,7 +17,7 @@ public:
                     i++;
                 }
                  if(result<k)
-                 count+=(j-i+1);
+                    count+=(j-i+1);
             }
             j++;
         }
