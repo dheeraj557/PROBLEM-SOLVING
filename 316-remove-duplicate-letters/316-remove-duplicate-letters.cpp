@@ -1,32 +1,32 @@
 class Solution {
 public:
-    string removeDuplicateLetters(string s) 
-    {
+    string removeDuplicateLetters(string s) {
+        vector<int> lastIndex(26, 0);
+        for (int i = 0; i < s.length(); i++)
+        {
+            lastIndex[s[i] - 'a'] = i; // track the lastIndex of character presence
+        }
+        vector<bool> seen(26, false); // keep track seen
         stack<char> st;
-        vector<int> seen(26,0);
-        unordered_map<char,int> last_index;
-        for(int i=0;i<s.length();i++){
-            last_index[s[i]]=i;
-        }
-        for(int i=0;i<s.length();i++){
-            char cur=s[i];
-            if(!seen[cur-'a'])
+        for (int i = 0; i < s.size(); i++) {
+            int curr = s[i] - 'a';
+            if (seen[curr]) 
+                continue; // if seen continue as we need to pick one char only
+            while(st.size() > 0 && st.top() > s[i] && i < lastIndex[st.top() - 'a'])
             {
-                while(!st.empty() and cur<st.top() and last_index[st.top()]>i)
-                {
-                    seen[st.top()-'a']=0;
-                    st.pop();
-                }
-                st.push(cur);
-                seen[cur-'a']++;
+                seen[st.top() - 'a'] = false; // pop out and mark unseen
+                st.pop();
             }
+            st.push(s[i]); // add into stack
+            seen[curr] = true; // mark seen
         }
-        string ans;
-        while(!st.empty()){
-            ans+=st.top();
+        string ans = "";
+        while (st.size() > 0)
+        {
+            ans += st.top();
             st.pop();
         }
-        reverse(ans.begin(),ans.end());
+        reverse(ans.begin(), ans.end());
         return ans;
     }
 };
