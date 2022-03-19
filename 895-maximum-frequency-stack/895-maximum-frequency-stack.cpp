@@ -2,12 +2,12 @@ class FreqStack {
 public:
     unordered_map<int,int> m;
     stack<pair<int,int>>st;
-    FreqStack() 
+    FreqStack()
     {
         while(st.size())
             st.pop();
     }
-    void push(int val)  
+    void push(int val)
     {
         m[val]++;
         if(st.size()==0)
@@ -17,7 +17,7 @@ public:
             stack<pair<int,int>>temp;
             while(st.size() && st.top().second>m[val]){
                 temp.push(st.top());
-            st.pop();
+                st.pop();
         }
         st.push(make_pair(val,m[val]));
         while(temp.size())
@@ -29,7 +29,8 @@ public:
 }
 int pop() 
 {
-    if(st.size()){
+    if(st.size())
+    {
         pair<int,int> ans=st.top();
         st.pop();
         m[ans.first]--;
