@@ -5,10 +5,10 @@ public:
         for(int i=0;i<n;++i)
         {
             int remain=k-(n-1-i);
-            if(remain>=26)  
-                res[n-1-i]='z' , k-=26;
+            if(remain>=26)
+                res[n-1-i]='z',k-=26;
             else 
-                res[n-1-i]=char('a'+remain-1) , k=n-i-1;
+                res[n-1-i]=char('a'+remain-1),k=n-i-1;
         }
         return res;
     }
