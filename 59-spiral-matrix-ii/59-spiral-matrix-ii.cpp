@@ -2,13 +2,11 @@ class Solution {
 public:
     vector<vector<int>> generateMatrix(int n) {
         vector<vector<int>> v;
-        
         for(int i=0; i<n; i++)
         {
             vector<int> vec (n, 0);
             v.push_back(vec);
         }
-        
         int top_row = 0, bottom_row = n-1, left_col = 0, right_col = n-1;
         int count = 1;
         while(top_row <= bottom_row && left_col <= right_col)
