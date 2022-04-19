@@ -1,26 +1,26 @@
 class Solution {
+    TreeNode *first=NULL,*second=NULL,*prev=NULL;   
 public:
-    TreeNode* lft = nullptr, * rht = nullptr, * prev = nullptr;
-    void inorder(TreeNode* r) {
-        if (r && (!lft || !rht)) 
+    void fix(TreeNode *root)
+    {
+        if(!root) return;
+        fix(root->left);
+    
+        if(prev && root->val<prev->val)
         {
-            inorder(r->left);
-            if (prev) 
-            {
-                if (!lft && r->val < prev->val) 
-                    lft = prev;
-                else if (lft && !rht && lft->val < r->val)  
-                    rht = prev;
-            }
-            prev = r;
-            inorder(r->right);
+            if(first == NULL) 
+                first = prev;
+            
+            second = root;
         }
+    
+        prev = root;
+        fix(root->right);
     }
-    void recoverTree(TreeNode* root) {
-        inorder(root);
-        if (!rht) 
-            rht = prev;
-        if (lft && rht) 
-            swap(lft->val, rht->val);
+
+    void recoverTree(TreeNode *root) 
+    {
+        fix(root);
+        swap(first->val,second->val);
     }
 };
