@@ -41,9 +41,9 @@ void helper(int num, string output)
         {
             helper(num, temp[i] + output);
         }
+        return;
     }
 }
-
 vector<string> letterCombinations(string digits) 
 {
     if(digits.length() == 0)
