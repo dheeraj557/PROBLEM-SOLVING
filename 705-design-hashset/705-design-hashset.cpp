@@ -3,7 +3,7 @@ public:
     vector<bool> v;
     MyHashSet() 
     {
-        v=vector<bool>(1000001,false);  //true mean the key is present and false mean key is not present
+        v=vector<bool>(1000001,false);
     }
     void add(int key) 
     {
