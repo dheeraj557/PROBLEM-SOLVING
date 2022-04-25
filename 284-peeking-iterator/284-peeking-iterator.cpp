@@ -1,9 +1,8 @@
 class PeekingIterator : public Iterator {
     private:
-    
         int *head ;
         int pointer = 0 ,size; 
-public:
+    public:
 	PeekingIterator(const vector<int>& nums) : Iterator(nums) 
     {
         int n = nums.size();
