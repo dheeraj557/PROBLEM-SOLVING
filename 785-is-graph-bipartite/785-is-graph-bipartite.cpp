@@ -3,6 +3,7 @@ public:
     bool isBipartite(vector<vector<int>>& graph) 
     {
         int n=graph.size();
+        cout<<n<<endl;
         vector<int> color(n,0);    
         for(int i=0;i<n;i++)
         {
