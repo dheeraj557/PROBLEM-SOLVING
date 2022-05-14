@@ -10,9 +10,11 @@ public:
         dist[k] = 0;
         vector<int> visited(n + 1, 0);
         while(not pq.empty()) {
-            pair<int, int> p = pq.top(); pq.pop();
+            pair<int, int> p = pq.top(); 
+            pq.pop();
             int u = p.second;
-            if(visited[u]) continue;
+            if(visited[u]) 
+                continue;
             visited[u] = 1;
             for(auto x : adj[u]) {
                 int v = x.first;
