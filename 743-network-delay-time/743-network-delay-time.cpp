@@ -9,7 +9,7 @@ public:
         pq.push({0, k});
         dist[k] = 0;
         vector<int> visited(n + 1, 0);
-        while(not pq.empty()) {
+        while(!pq.empty()) {
             pair<int, int> p = pq.top(); 
             pq.pop();
             int u = p.second;
