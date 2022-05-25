@@ -7,10 +7,6 @@ public:
     }
     int maxEnvelopes(vector<vector<int>>& envelopes) {
         sort(envelopes.begin(),envelopes.end(),cmp);
-        for(auto i:envelopes)
-        {
-            cout<<i[0]<<" "<<i[1]<<endl;
-        }
         vector<int>v;
         for(auto i:envelopes){
             auto it=lower_bound(v.begin(),v.end(),i[1]);
