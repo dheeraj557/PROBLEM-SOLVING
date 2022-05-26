@@ -28,9 +28,8 @@ class Solution
             par[b]=findpar(a,par);
         else
         {
-            int p=findpar(a,par);
-            par[b]=p;
-            rank1[p]++;
+            par[b]=findpar(a,par);
+            rank1[a]++;
         }
     }
     bool isConnected(int x,int y, int par[], int rank1[])
