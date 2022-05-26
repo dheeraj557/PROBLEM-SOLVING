@@ -12,46 +12,35 @@ using namespace std;
 class Solution
 {
     public:
-    //Function to find root of a node.
-    int findRoot(int i, int par[], int rank1[]) 
+    int findpar(int a,int par[])
     {
-        //iterating to find the node whose par[i] is equal to i.
-        while(i!=par[i]) {
-            i = par[i];
-        }
-        return i;
+        if(par[a]==a)
+            return a;
+        return par[a]=findpar(par[a],par);
     }
-    
-    //Function to merge two nodes a and b.
     void union_( int a, int b, int par[], int rank1[]) 
     {
-        //find root of nodes a and b.
-        int x = findRoot(a, par, rank1);
-        int y = findRoot(b, par, rank1);
-        
-        //base case if they are already in same set.
-        if(x==y) {
-            return;
+        a=findpar(a,par);
+        b=findpar(b,par);
+        if(rank1[a]<rank1[b])
+            par[a]=findpar(b,par);
+        else if(rank1[b]<rank1[a])
+            par[b]=findpar(a,par);
+        else
+        {
+            int p=findpar(a,par);
+            par[b]=p;
+            rank1[p]++;
         }
-        
-        //checking for rank, and putting in set with higher rank.
-        if(rank1[x]>=rank1[y]) {
-            rank1[x]++;
-            par[y] = par[x];
-        } else {
-            rank1[y]++;
-            par[x] = par[y];
-        }
-        return;
     }
-    
-    //Function to check whether 2 nodes are connected or not.    
-    bool isConnected(int x,int y, int par[], int rank1[]) 
+    bool isConnected(int x,int y, int par[], int rank1[])
     {
-        //if root of both nodes is same then they are connected.
-        return (findRoot(x, par, rank1) == findRoot(y, par, rank1));
+        if(findpar(x,par)==findpar(y,par))
+            return true;
+        return false;
     }
 };
+
 // { Driver Code Starts.
 
 int main() {
