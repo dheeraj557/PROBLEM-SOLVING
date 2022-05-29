@@ -21,6 +21,7 @@ public:
                     if(dp[i][k]>0&&dp[j][k]>0)
                     {
                         common=false;
+                        break;
                     }
                 }
                 if(common)
