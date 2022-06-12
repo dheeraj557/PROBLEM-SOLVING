@@ -11,7 +11,7 @@ public:
         {
             int right = nums[R++];
             sum += right;
-            freqMap[right]++;          
+            freqMap[right]++;
             while(freqMap[right] > 1) 
             {
                 int left = nums[L++];
