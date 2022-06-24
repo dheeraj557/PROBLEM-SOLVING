@@ -16,7 +16,7 @@ public:
             sum-=x;
             if (x<=sum||sum<1) 
                 return false;
-            x%=sum;
+            x%=sum; 
             sum+=x;
             pq.push(x?x:sum);
         }
