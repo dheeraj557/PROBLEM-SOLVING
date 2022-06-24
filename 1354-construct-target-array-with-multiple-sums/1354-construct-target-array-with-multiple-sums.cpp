@@ -7,8 +7,7 @@ public:
         unsigned int sum = 0;
         for (int x :target)
         {
-            sum+=x;
-            pq.push(x);
+            sum+=x,pq.push(x);
         }
         while(pq.top()!=1) 
         {
