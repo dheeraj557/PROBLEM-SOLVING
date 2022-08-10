@@ -1,7 +1,8 @@
 class Solution {
 
 public:
-string reverseWords(string s) {
+string reverseWords(string s) 
+{
     string k="";
     vector<string>v;
  for(int i=0;i<s.size();i++){
@@ -16,7 +17,8 @@ string reverseWords(string s) {
      }
  }
     k.clear();
-   for(int i=v.size()-1;i>=0;i--){
+   for(int i=v.size()-1;i>=0;i--)
+   {
       k+=v[i];
        if(i!=0){
            k.push_back(' ');
