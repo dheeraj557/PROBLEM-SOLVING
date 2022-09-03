@@ -12,12 +12,12 @@ public:
                 q.pop_front();
                 for (int j = 0; j < 10; j++)
                 {
-                  if (abs((p % 10) - j) == k) 
-                  { 
-                    q.push_back(p * 10 + j);
-                  }
+                    if (abs((p % 10) - j) == k) 
+                    { 
+                        q.push_back(p * 10 + j);
+                    }
                 }
-          }
+            }
         }
         return vector<int>{q.begin(), q.end()};
     }
