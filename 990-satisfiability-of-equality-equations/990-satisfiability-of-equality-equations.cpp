@@ -1,9 +1,11 @@
-class Solution {
+class Solution 
+{
 public:
     int par[30],Rank[30];
     int find_parent(int n)
     {
-        if(par[n]!=n)par[n]=find_parent(par[n]);
+        if(par[n]!=n)
+            par[n]=find_parent(par[n]);
         return par[n];
     }
     void Union(int x,int y)
