@@ -1,4 +1,5 @@
-class StockSpanner {
+class StockSpanner 
+{
 public:
     stack<pair<int, int>> s;
     StockSpanner() {}  
