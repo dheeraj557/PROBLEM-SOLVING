@@ -18,6 +18,6 @@ public:
        if(s1==s2 && freq1==freq2)
            return true;
        else
-           return false;       
+           return false;
    }
 };
