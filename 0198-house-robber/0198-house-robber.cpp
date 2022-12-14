@@ -7,6 +7,7 @@ public:
             return nums[0];
         if(row == 2)
             return max(nums[0], nums[1]);
+        
         vector<int>dp(row+1,0);
         
         dp[row-1] = nums[row-1];
