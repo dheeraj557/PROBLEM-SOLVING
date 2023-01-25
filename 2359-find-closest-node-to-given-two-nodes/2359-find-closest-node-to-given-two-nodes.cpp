@@ -13,12 +13,14 @@ public:
     for(int i=0; i<n; i++){
        
        if(max(dist1[i],dist2[i])<ans)
-        { ans= max(dist1[i],dist2[i]);
-        index= i;}
+           
+        { 
+           ans= max(dist1[i],dist2[i]);
+           index= i;
+       }
     }
     return index;
     }
-
     void dfs (int node, vector<int>&dist, vector<int>&edges, vector<bool>&visited, int distance){
 
     if(  node!=-1 && !visited[node])
