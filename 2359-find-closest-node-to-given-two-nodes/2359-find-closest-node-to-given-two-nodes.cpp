@@ -10,10 +10,9 @@ public:
     dfs(node1,dist1,edges,visited,0);
     visited.assign(n,0);
     dfs(node2,dist2,edges,visited,0);
-    for(int i=0; i<n; i++){
-       
-       if(max(dist1[i],dist2[i])<ans)
-           
+    for(int i=0; i<n; i++)
+    {   
+       if(max(dist1[i],dist2[i])<ans)      
         { 
            ans= max(dist1[i],dist2[i]);
            index= i;
