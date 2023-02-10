@@ -11,7 +11,8 @@ public:
         for(int i=n-1;i>=0;i--)
         {
             int curr=nums[i];
-            while(st.top()!=INT_MIN and st.top()<=curr){
+            while(st.top()!=INT_MIN and st.top()<=curr)
+            {
                 st.pop();
             }
             nums[i]=st.top()==INT_MIN?-1:st.top();
