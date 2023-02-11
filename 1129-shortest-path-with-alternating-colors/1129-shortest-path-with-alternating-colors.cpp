@@ -35,7 +35,6 @@ public:
                         }
                         vis[it.first][it.second]=1;
                         q.push(it);
-
                     }
                 }
             }
