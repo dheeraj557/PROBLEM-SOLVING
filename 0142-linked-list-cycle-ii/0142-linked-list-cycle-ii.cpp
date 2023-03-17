@@ -1,22 +1,16 @@
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
-        if(head==NULL) return NULL;
-        ListNode*slow=head,*fast=head,*curr=head;
-        
-        while(fast->next!=NULL && fast->next->next!=NULL){
-        slow=slow->next;
-        fast=fast->next->next;
-        if(slow==fast){ //meet point
-        while(curr!=fast){
-            fast=fast->next;
-            curr=curr->next;
-        }
-        return fast;
-
-        }
+        unordered_set<ListNode*>m;
+        ListNode*i=head;
+        while(i!=NULL)
+        {
+            if(m.find(i)==m.end())
+                m.insert(i);
+            else
+                return i;
+            i=i->next;
         }
         return NULL;
-
     }
 };
