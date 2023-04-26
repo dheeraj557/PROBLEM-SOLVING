@@ -9,7 +9,8 @@ public:
             int zeros = 0;
             for(int j=0; j<m; ++j)
             {
-                if(mat[i][j] == 0) zeros++;
+                if(mat[i][j] == 0) 
+                    zeros++;
             }
             row.push_back(zeros);
         }
@@ -18,7 +19,8 @@ public:
             int zeros = 0;
             for(int j=0; j<n; ++j)
             {
-                if(mat[j][i] == 0) zeros++;
+                if(mat[j][i] == 0) 
+                    zeros++;
             }
             col.push_back(zeros);
         }
