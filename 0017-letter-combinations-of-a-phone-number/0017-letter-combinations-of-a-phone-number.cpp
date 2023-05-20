@@ -39,7 +39,7 @@ void helper(int num, string output)
         num = num / 10;
         for(int i = 0; i < temp.length(); i++)
         {
-            helper(num, temp[i] + output);
+            helper(num, temp[i]+output);
         }
         return;
     }
