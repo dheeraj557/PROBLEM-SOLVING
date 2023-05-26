@@ -1,5 +1,4 @@
 class Solution {
-
     bool ispalindrome(string s){
         for(int i=0;i<s.size()/2;++i){
             if(s[i]==s[s.size()-1-i]){
@@ -11,17 +10,19 @@ class Solution {
     }
 public:
     void helper(vector<vector<string>>&ans,vector<string>&temp,string s){
-   if(s.size()==0){  //base condistion when there is no string left
+   if(s.size()==0)
+   {
        ans.push_back(temp);
        return;
    }
-    for(int i=0;i<s.size();++i){
+    for(int i=0;i<s.size();++i)
+    {
         string check=s.substr(0,i+1);
-        if(ispalindrome(check)){
+        if(ispalindrome(check))
+        {
             temp.push_back(check);
             helper(ans,temp,s.substr(i+1));
             temp.pop_back();
-
         }
     }
 }
