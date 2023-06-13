@@ -14,7 +14,7 @@ public:
                 }
                 row[i].insert(board[i][j]);
                 col[j].insert(board[i][j]);
-                block[i / 3 * 3 + j / 3].insert(board[i][j]);
+                block[i / 3 * 3 + j / 3 ].insert(board[i][j]);
             }
         }
         return true;
