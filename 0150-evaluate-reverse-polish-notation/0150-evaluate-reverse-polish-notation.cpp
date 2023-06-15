@@ -1,35 +1,44 @@
 class Solution {
-
-    long resolves(int a, int b, char Operator)
-    {
-        if(Operator == '+') 
-            return a + b;
-        else if(Operator == '-') 
-            return a - b;
-        else if(Operator == '*') 
-            return (long)a*b;
-        return a/b;
-    }
 public:
-    int evalRPN(vector<string>& tokens)
-    {
-        stack<long> Stack;
-        int n = tokens.size();
-        for(int i = 0; i < n; i++)
+    int evalRPN(vector<string>& tokens) {
+        stack<int>st;
+        unordered_set<string>s;
+        s.insert("+");
+        s.insert("-");
+        s.insert("/");
+        s.insert("*");
+        for(int i=0;i<tokens.size();i++)
         {
-            if(tokens[i].size() == 1 and tokens[i][0] < 48)
+            if(s.find(tokens[i])!=s.end())
             {
-                long integer2 = Stack.top();
-                Stack.pop();
-                long integer1 = Stack.top();
-                Stack.pop();    
-                string Operator = tokens[i];
-                long resolvedAns = resolves(integer1, integer2 , Operator[0]);
-                Stack.push(resolvedAns);
+                int a=st.top();
+                st.pop();
+                int b=st.top();
+                st.pop();
+                int res=0;
+                if(tokens[i]=="+")
+                {
+                    res=b+a;
+                }
+                else if(tokens[i]=="-")
+                {
+                    res=b-a;
+                }
+                if(tokens[i]=="*")
+                {
+                    res=b*a;
+                }
+                if(tokens[i]=="/")
+                {
+                    res=b/a;
+                }
+                st.push(res);
             }
-            else 
-                Stack.push(stoi(tokens[i]));
+            else{
+                int a=stoi(tokens[i]);
+            st.push(a);
+            }
         }
-        return Stack.top();
+        return st.top();
     }
 };
